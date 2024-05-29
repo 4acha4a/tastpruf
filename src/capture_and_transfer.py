@@ -2,8 +2,9 @@ import subprocess
 import paramiko
 import os
 import time
+import cv2
 
-def capture_image():
+def capture_image_ssh():
     time.sleep(5)
     # Define Orange Pi SSH connection details
     ORANGE_PI_IP = "192.168.18.30"
@@ -48,6 +49,29 @@ def capture_image():
         ssh.close()
 
     # print(f"Image captured, rotated, and transferred to MacBook as {LOCAL_IMAGE_PATH}")
+
+def capture_image_local():
+    cap = cv2.VideoCapture(0)
+    if not cap.isOpened():
+        print("Failed to create capture object.")
+        quit(-1)
+
+    cap.set(cv2.CAP_PROP_FRAME_WIDTH,2592)
+    cap.set(cv2.CAP_PROP_FRAME_HEIGHT,1936)
+    #cap.set(cv2.cv.CV_CAP_PROP_FORMAT, cv2.cv.IPL_DEPTH_32F)
+
+    print("Ramping camera...")
+    for i in range(0, 30):
+        _, image = cap.read()
+
+    cv2.imwrite("img_from_camera.jpg", image)
+    cap.release()
+
+def capture_image(ssh=True):
+    if (ssh == True):
+        capture_image_ssh()
+    else:
+        capture_image_local()
 
 
 
