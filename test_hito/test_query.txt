@@ -1,0 +1,40 @@
+SET_CAMERA
+SET_SCREEN lock_device_cropped.png
+FIND key.png
+FIND lock.png
+SWIPE key.png lock.png
+SET_CAMERA
+SET_SCREEN passcode_device_cropped.png
+FIND enter_passcode.png
+FIND 2.png
+TAP 2.png
+SET_CAMERA
+SET_SCREEN passcode_device_cropped_1star.png
+FIND star.png
+FIND 8.png
+TAP 8.png
+SET_CAMERA
+SET_SCREEN passcode_device_cropped_2stars.png
+FIND 2stars.png
+FIND 5.png
+TAP 5.png
+SET_CAMERA
+SET_SCREEN passcode_device_cropped_3stars.png
+FIND 3stars.png
+FIND 6.png
+TAP 6.png
+SET_CAMERA
+SET_SCREEN passcode_device_cropped_4stars.png
+FIND 4stars.png
+FIND 3.png
+TAP 3.png
+SET_CAMERA
+SET_SCREEN passcode_device_cropped_5stars.png
+FIND 5stars.png
+FIND 4.png
+TAP 4.png
+SET_CAMERA
+SET_SCREEN welcome.png
+FIND ethereum_logo.png
+FIND receive.png
+TAP receive.png
