@@ -63,12 +63,12 @@ def capture_image_local():
     print("Ramping camera...")
     for i in range(0, 30):
         _, image = cap.read()
-
+    #image = cv2.rotate(src, cv2.ROTATE_90_COUNTERCLOCKWISE)
     cv2.imwrite("img_from_camera.jpg", image)
     cap.release()
 
-def capture_image(ssh=True):
-    if (ssh == True):
+def capture_image(ssh=False):
+    if     ssh == True:
         capture_image_ssh()
     else:
         capture_image_local()
