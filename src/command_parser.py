@@ -41,7 +41,6 @@ class FindCommand(Command):
     pixels_per_millimeter_y = h_platform / 208
     btr = self.params.platform_coords["bottom_right"]
     new_point = (btr[0] - point[0], btr[1] - point[1])
-    # параметры offset задаются заранее пользователем
     X = new_point[0] / pixels_per_millimeter_x - self.params.offset_x - self.params.const_offset_screw  # offset_x = 56, const_offset_screw = 5.5 
     Y = new_point[1] / pixels_per_millimeter_y - self.params.offset_y - self.params.const_offset_screw  # offset_x = 29, const_offset_screw = 5.5 
     return (X, Y)
